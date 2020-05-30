@@ -9,6 +9,7 @@ public abstract class Car implements Serviceable{
 	Color color;
 	private int distance = 0;
 	protected int distanceOnService = 0;
+	int myvalue;
 	
 	public Car(String name, int yearOfProduction, int price, int weight, Color color) {
 		this.name = name;
@@ -18,12 +19,14 @@ public abstract class Car implements Serviceable{
 		this.color = color;
 	}
 	
+	@Override
 	public void addDistance(int additionalDistance) {
 		distance += additionalDistance;
 		distanceOnService += additionalDistance;
 		
 	}
 
+	@Override
 	public void addDistance(double additionalDistance) {
 		distance += additionalDistance;
 		distanceOnService += additionalDistance;
@@ -35,6 +38,7 @@ public abstract class Car implements Serviceable{
 	}
 
 	
+	@Override
 	public int getDistanceOnService() {
 		return distanceOnService;
 	}
